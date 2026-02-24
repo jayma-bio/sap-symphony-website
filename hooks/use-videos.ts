@@ -6,24 +6,28 @@ interface UseVideosOptions {
   enabled?: boolean;
   refetchOnWindowFocus?: boolean;
   staleTime?: number;
+  page?: number;
+  pageSize?: number;
 }
 
-// Hook for getting all videos (list)
 export const useVideos = (
   options?: UseVideosOptions,
 ): UseQueryResult<VideoResponse, Error> => {
   return useQuery<VideoResponse, Error>({
-    queryKey: ["videos"],
+    queryKey: ["videos", options?.page, options?.pageSize],
     queryFn: async () => {
-      const response = await api.get("/video", {
-        params: {
-          "populate[media][populate][file][populate]": "*",
-          pagination: {
-            pageSize: 25,
-          },
+      const params = {
+        "populate[media][populate][file][populate]": "*",
+        "populate[media][populate][thumbnail][populate]": "*",
+        pagination: {
+          page: options?.page ?? 1,
+          pageSize: options?.pageSize ?? 25,
+          withCount: true,
         },
-      });
-      return response.data; // VideoResponse type
+      };
+
+      const response = await api.get("/video", { params });
+      return response.data;
     },
     enabled: options?.enabled ?? true,
     refetchOnWindowFocus: options?.refetchOnWindowFocus ?? false,
@@ -31,7 +35,6 @@ export const useVideos = (
   });
 };
 
-// Hook for getting single video details
 export const useVideoDetail = (
   videoId: string | number,
   options?: UseVideosOptions,
@@ -42,10 +45,10 @@ export const useVideoDetail = (
       const response = await api.get(`/video/${videoId}`, {
         params: {
           "populate[media][populate][file][populate]": "*",
+          "populate[media][populate][thumbnail][populate]": "*",
         },
       });
-      const video: VideoResponse = response.data;
-      return video;
+      return response.data;
     },
     enabled: (options?.enabled ?? true) && !!videoId,
     refetchOnWindowFocus: options?.refetchOnWindowFocus ?? false,

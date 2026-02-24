@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 import NextTopLoader from "nextjs-toploader";
 import Navbar from "@/components/modules/navbar";
 import { QueryProvider } from "@/components/providers/query-provider";
-import { VideoProvider } from "@/components/providers/video-provider";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -45,12 +44,12 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <QueryProvider>
-          <VideoProvider>
+
           <NextTopLoader showSpinner={false} />
           <Navbar />
           {children}
           <Toaster />
-          </VideoProvider>
+
         </QueryProvider>
       </body>
     </html>

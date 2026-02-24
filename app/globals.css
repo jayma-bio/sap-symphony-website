@@ -192,3 +192,15 @@ input[type="number"]::-webkit-outer-spin-button {
   background-position: center;
   overflow: hidden;
 }
+.media-player-bg {
+  background-image: url("/bg/media-player-bg.webp");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .landing-hero-bg {
+    background-image: url("/bg/landing-hero-mob.webp");
+  }
+}

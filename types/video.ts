@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// Response data type for /api/video endpoint with full media.file population
+
+// Response data type for /api/video endpoint with full media population including thumbnails
 export interface VideoResponse {
   data: {
-    id: number;
+    id: string;
     documentId: string;
+    media: VideoMediaItem[];
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
-    media: VideoMediaItem[];
     createdBy?: {
       id: string;
       documentId: string;
@@ -30,10 +31,11 @@ export interface VideoMediaItem {
   id: string;
   tag: string;
   index: number;
-  file: VideoFile;
+  file: MediaFile;
+  thumbnail: MediaFile;
 }
 
-export interface VideoFile {
+export interface MediaFile {
   id: string;
   documentId: string;
   name: string;
@@ -58,7 +60,7 @@ export interface VideoFile {
   folderPath?: string;
   createdAt: string;
   updatedAt: string;
-  publishedAt: string;
+  publishedAt?: string;
   createdBy?: {
     id: string;
     documentId: string;

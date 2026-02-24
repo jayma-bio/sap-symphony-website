@@ -14,7 +14,7 @@ const Logo = ({ className }: LogoProps) => {
         alt="logo"
         width={60}
         height={60}
-        className="shrink-0 w-20"
+        className="shrink-0 w-16"
       />
     </Link>
   );
