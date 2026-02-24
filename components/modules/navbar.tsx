@@ -25,7 +25,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`fixed right-0 left-0 top-0 z-10 w-full transition-all duration-300 ${
+    <div className={`fixed right-0 left-0 top-0 z-50 w-full transition-all duration-300 ${
       isScrolled 
         ? "bg-linear-to-l from-black/70 via-black/60 to-black/70 backdrop-blur-xss" 
         : "bg-linear-to-l from-black/30 to-black/20"

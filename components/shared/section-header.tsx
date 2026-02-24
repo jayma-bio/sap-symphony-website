@@ -22,7 +22,7 @@ const SectionHeader = ({
   // description,
 }: Props) => {
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <div className="flex flex-col gap-6 w-full">
      <BlurFade inView delay={0.2}>
          <div className="flex gap-3 items-center justify-center md:justify-start">
         <div className={cn("w-14 h-0.5 bg-light-black", lineClassName)} />
