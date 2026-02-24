@@ -168,10 +168,10 @@
   /* Animations */
   @keyframes logo-cloud {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-100% - 4rem));
+      transform: translateX(-50%);
     }
   }
 

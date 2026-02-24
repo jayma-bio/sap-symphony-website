@@ -13,46 +13,55 @@ const text = [
   { name: "Future Ready" },
 ];
 
-const LOOP_COUNT = 3;
-
+// Render 2 copies: first copy is the "visible" set, second is the seamless repeat.
+// We animate translateX from 0 → -50% (half of total width = one full set).
 const TextCloud = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!trackRef.current) return;
-
     const el = trackRef.current;
+    if (!el) return;
 
-    // Pause animation until measurement is done
-    el.style.animationPlayState = "paused";
+    // Measure one set's width (half the total, since we render 2 copies)
+    const totalWidth = el.scrollWidth;
+    const oneSetWidth = totalWidth / 2;
 
-    requestAnimationFrame(() => {
-      const width = el.scrollWidth;
-      el.style.transform = `translateX(-${width / 3}px)`;
+    // Inject a named keyframe dynamically so the distance is pixel-perfect
+    const styleId = "text-cloud-keyframe";
+    let styleEl = document.getElementById(styleId) as HTMLStyleElement | null;
+    if (!styleEl) {
+      styleEl = document.createElement("style");
+      styleEl.id = styleId;
+      document.head.appendChild(styleEl);
+    }
+    styleEl.textContent = `
+      @keyframes text-cloud-scroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-${oneSetWidth}px); }
+      }
+    `;
 
-      // Start the animation only AFTER transform is applied
-      requestAnimationFrame(() => {
-        el.style.animationPlayState = "running";
-      });
-    });
+    el.style.animation = `text-cloud-scroll 28s linear infinite`;
   }, []);
 
-  const repeated = Array.from({ length: LOOP_COUNT }, () => text).flat();
+  // Two copies for seamless loop
+  const doubled = [...text, ...text];
 
   return (
     <div className="w-full max-w-screen-2xl relative mx-auto">
-      <div className="absolute left-0 top-0 bottom-0 md:w-12 w-6 bg-gradient-to-r from-white via-light-green/80 to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 md:w-12 w-6 bg-gradient-to-l from-white via-light-green/80 to-transparent z-10" />
+      <div className="absolute left-0 top-0 bottom-0 md:w-12 w-6 bg-gradient-to-r from-white via-light-green/90 to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 md:w-12 w-6 bg-gradient-to-l from-white via-light-green/90 to-transparent z-10" />
 
       <div className="overflow-hidden py-2 md:py-4 bg-light-green">
         <div
           ref={trackRef}
-          className="flex animate-logo-cloud gap-6 will-change-transform"
+          className="flex will-change-transform"
+          style={{ width: "max-content" }}
         >
-          {repeated.map((item, index) => (
+          {doubled.map((item, index) => (
             <div
               key={index}
-              className="flex shrink-0 items-center gap-6 select-none pointer-events-none text-deepest-green whitespace-nowrap"
+              className="flex shrink-0 items-center gap-6 select-none pointer-events-none text-deepest-green whitespace-nowrap px-6"
             >
               <CustomIcon src="/icons/star.svg" size={10} />
               <span className="text-lg font-medium">{item.name}</span>
