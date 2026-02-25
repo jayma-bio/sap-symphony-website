@@ -8,6 +8,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   description?: string;
   tagClassName?:string;
+  hideTag?:boolean;
   titleClassName?:string;
   descriptionClassName?:string;
 }
@@ -16,6 +17,7 @@ const SectionHeader = ({
   tag,
   title,
   tagClassName,
+  hideTag,
   lineClassName,
   titleClassName,
   descriptionClassName,
@@ -23,7 +25,8 @@ const SectionHeader = ({
 }: Props) => {
   return (
     <div className="flex flex-col gap-6 w-full">
-     <BlurFade inView delay={0.2}>
+        {!hideTag && (
+           <BlurFade inView delay={0.2}>
          <div className="flex gap-3 items-center justify-center md:justify-start">
         <div className={cn("w-14 h-0.5 bg-light-black", lineClassName)} />
         <h1 className={cn("font-manrope text-sm tracking-widest text-light-black uppercase", tagClassName)}>
@@ -31,6 +34,7 @@ const SectionHeader = ({
         </h1>
       </div>
       </BlurFade>
+        )}
       <BlurFade delay={0.25} inView>
         <h1 className={cn("heading text-[48px]! text-deepest-green", titleClassName)}>
           {title}

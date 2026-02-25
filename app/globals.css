@@ -142,6 +142,7 @@
   --deep-green: #d7e4bf;
   --deepest-green: #2c3221;
   --light-black: #202020;
+  --extra-green:#536942;
 }
 
 @layer base {
@@ -199,8 +200,21 @@ input[type="number"]::-webkit-outer-spin-button {
   overflow: hidden;
 }
 
+.use-case-hero-bg {
+  background-image: url("/bg/use-case-hero-bg.webp");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
 @media (max-width: 767px) {
   .landing-hero-bg {
     background-image: url("/bg/landing-hero-mob.webp");
+  }
+  .media-player-bg {
+    background-image: url("/bg/media-player-bg-mob.webp");
+  }
+  .use-case-hero-bg {
+    background-image: url("/bg/use-case-hero-bg-mob.webp");
   }
 }
