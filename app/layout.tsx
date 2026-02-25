@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/sonner";
 import NextTopLoader from "nextjs-toploader";
 import Navbar from "@/components/modules/navbar";
 import { QueryProvider } from "@/components/providers/query-provider";
+import Footer from "@/components/modules/footer";
+import CopyRight from "@/components/modules/copyright";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -49,6 +51,8 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Toaster />
+          <Footer />
+          <CopyRight/>
 
         </QueryProvider>
       </body>

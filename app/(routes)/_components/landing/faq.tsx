@@ -14,7 +14,7 @@ const FaqSection = () => {
   return (
     <div
       id="faq"
-      className="w-full bg-white h-auto responsive-padding flex items-center flex-col mx-auto gap-8 py-10"
+      className="w-full bg-white h-auto responsive-padding flex items-center flex-col mx-auto gap-8 py-12"
     >
       <SectionHeader tag="FAQ" title="Your Questions, Answered" />
 

@@ -18,8 +18,8 @@ const SectionHeader = ({
   tagClassName,
   lineClassName,
   titleClassName,
-  // descriptionClassName,
-  // description,
+  descriptionClassName,
+  description,
 }: Props) => {
   return (
     <div className="flex flex-col gap-6 w-full">
@@ -36,6 +36,11 @@ const SectionHeader = ({
           {title}
         </h1>
       </BlurFade>
+      <BlurFade delay={0.3} inView>
+        <p className={cn("text-light-black text-center md:text-start md:w-[70%]", descriptionClassName)}>
+          {description}
+        </p>
+        </BlurFade>
     </div>
   );
 };
