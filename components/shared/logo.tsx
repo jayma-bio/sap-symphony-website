@@ -1,16 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface LogoProps {
   className?: string;
+  chageOnScroll?: boolean;
+  special_paths?: string[]
 }
 
-const Logo = ({ className }: LogoProps) => {
+
+const Logo = ({ className, special_paths, chageOnScroll }: LogoProps) => {
+  const pathname = usePathname();
+  const isSpecialPath = special_paths?.includes(pathname) || false;
+  
   return (
     <Link href={"/"} className={cn("cursor-pointer select-none", className)}>
       <Image
-        src="/logo.svg"
+        src={chageOnScroll && isSpecialPath ? "/logo-black.svg" : "/logo.svg"}
         alt="logo"
         width={60}
         height={60}
