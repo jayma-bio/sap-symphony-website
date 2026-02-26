@@ -4,8 +4,9 @@ import BlurFade from "@/components/shared/blur-fade";
 
 const Hero = () => {
   return (
-    <div className="w-full min-h-svh md:min-h-lvh landing-hero-bg flex items-center responsive-padding">
-      <div className="flex flex-col space-y-8 -mt-6">
+<section className="landing-hero-bg  w-full">
+      <div className="w-full min-h-svh max-w-screen-2xl mx-auto md:min-h-lvh flex items-center responsive-padding">
+      <div className="flex flex-col space-y-8 -mt-6 ">
         <BlurFade delay={0.2} inView>
           <h1 className="heading">
             Decode Nature&apos;s <br /> Secret{" "}
@@ -23,6 +24,7 @@ const Hero = () => {
         </BlurFade>
       </div>
     </div>
+</section>
   );
 };
 

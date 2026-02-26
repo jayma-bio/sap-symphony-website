@@ -12,9 +12,10 @@ import { FAQ } from "@/constants/faq";
 
 const FaqSection = () => {
   return (
-    <div
+<section className="bg-white! w-full!">
+      <div
       id="faq"
-      className="w-full bg-white h-auto responsive-padding flex items-center flex-col mx-auto gap-8 py-12"
+      className="w-full h-auto responsive-padding max-w-screen-2xl mx-auto flex items-center flex-col gap-8 py-12"
     >
       <SectionHeader tag="FAQ" title="Your Questions, Answered" />
 
@@ -39,6 +40,7 @@ const FaqSection = () => {
         ))}
       </Accordion>
     </div>
+</section>
   );
 };
 

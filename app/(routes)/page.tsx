@@ -10,7 +10,7 @@ import ScienceBehind from "./_components/landing/science-behind";
 
 export default function Home() {
   return (
-    <MaxWrapper className="flex flex-col">
+    <MaxWrapper className="flex flex-col bg-light-white">
       <Hero />
       <TextCloud />
       <MediaPlayer />

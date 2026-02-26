@@ -60,7 +60,7 @@ const ScienceSystemComponent = ({ className }: PlantSignalComponentProps) => {
   return (
     <div
       className={cn(
-        "flex flex-col-reverse lg:flex-row gap-8 w-full mx-auto items-stretch 2xl:aspect-5/2",
+        "flex flex-col-reverse lg:flex-row gap-8 w-full mx-auto items-center justify-center 2xl:aspect-5/2",
         className,
       )}
     >
@@ -103,7 +103,7 @@ const ScienceSystemComponent = ({ className }: PlantSignalComponentProps) => {
 
       {/* Fixed Size Image Section */}
       <div className="w-full lg:w-[35%] relative rounded-lg overflow-hidden shrink-0 -mt-2">
-        <div className="w-full h-100 lg:h-125 relative">
+        <div className="w-full h-100 lg:h-120 relative">
           <Image
             src={accordionData[activeIndex].image}
             alt={accordionData[activeIndex].title}

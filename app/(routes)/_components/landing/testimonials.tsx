@@ -74,9 +74,10 @@ const TestimonialsColumn = (props: {
 
 export const Testimonials = () => {
   return (
-    <div
+    <section className="w-full bg-light-black">
+      <div
       id="testimonials"
-      className="w-full bg-light-black h-auto responsive-padding flex items-center flex-col mx-auto gap-8 py-10"
+      className="w-full  h-auto max-w-screen-2xl mx-auto responsive-padding flex items-center flex-col gap-8 py-10"
     >
       <SectionHeader
         tag="Success Stories"
@@ -105,5 +106,6 @@ export const Testimonials = () => {
         </BlurFade>
       </div>
     </div>
+    </section>
   );
 };

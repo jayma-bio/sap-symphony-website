@@ -9,9 +9,9 @@ const PRODUCT_LINK = process.env.NEXT_PUBLIC_PRODUCT_LINK!;
 
 const CtaSection = () => {
   return (
-    <section className={cn("responsive-padding py-12 bg-light-white")}>
+    <section className={cn("responsive-padding max-w-screen-2xl mx-auto py-12")}>
      <BlurFade delay={0.1} inView>
-       <div className="flex md:flex-row flex-col-reverse gap-6 md:justify-between rounded-4xl bg-light-black overflow-hidden relative">
+       <div className="flex md:flex-row flex-col-reverse gap-6 md:justify-between rounded-4xl bg-light-black overflow-hidden relative max-w-screen-2xl mx-auto">
         <div className="w-full md:w-[55%] px-10 flex items-start justify-center flex-col gap-5">
           <SectionHeader
             tag="experience now"

@@ -35,7 +35,7 @@ const Footer = () => {
 
   return (
     <div className="bg-white flex items-center justify-center w-full mx-auto">
-      <div className="w-full responsive-padding flex flex-col-reverse lg:flex-row justify-between gap-8 my-6">
+      <div className="w-full max-w-screen-2xl responsive-padding flex flex-col-reverse lg:flex-row justify-between gap-8 my-6">
         {/* Links Section */}
         <div className="flex gap-12 lg:gap-16">
           {/* Quick Links */}

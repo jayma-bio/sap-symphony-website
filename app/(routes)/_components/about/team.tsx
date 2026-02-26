@@ -10,7 +10,7 @@ import BlurFade from "@/components/shared/blur-fade";
 
 const TeamSection = () => {
   return (
-    <div className="w-full h-auto responsive-padding flex items-center flex-col mx-auto gap-8 py-12">
+    <div className="w-full h-auto max-w-screen-2xl mx-auto responsive-padding flex items-center flex-col mx-auto gap-8 py-12">
       <SectionHeader
         tag="TEAM"
         title="The Minds Behind the Innovation"

@@ -7,14 +7,15 @@ import { aboutPageData } from "@/constants/about";
 const ChooseUs = () => {
   return (
     <>
-      <div className="w-full h-auto responsive-padding flex items-center flex-col mx-auto gap-8 pt-12">
+      <div className="w-full h-auto  max-w-screen-2xl mx-auto responsive-padding flex items-center flex-col mx-auto gap-8 pt-12">
         <SectionHeader
           tag="CHOOSE US"
           title="Why Sap Symphony?"
           description="Because sometimes… connection begins when we stop trying to control, and start listening."
         />
       </div>
-      {aboutPageData.map((item, index) => (
+     <div className="max-w-screen-2xl mx-auto">
+       {aboutPageData.map((item, index) => (
         <GlobalSection
           key={index}
           image={item.image}
@@ -23,6 +24,7 @@ const ChooseUs = () => {
           flexReverse={item.flexReverse}
         />
       ))}
+     </div>
     </>
   );
 };
