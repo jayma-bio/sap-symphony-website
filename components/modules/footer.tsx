@@ -35,7 +35,7 @@ const Footer = () => {
 
   return (
     <div className="bg-white flex items-center justify-center w-full mx-auto">
-      <div className="w-full responsive-padding flex flex-col-reverse lg:flex-row justify-between gap-8 my-6">
+      <div className="w-full max-w-screen-2xl responsive-padding flex flex-col-reverse lg:flex-row justify-between gap-8 my-6">
         {/* Links Section */}
         <div className="flex gap-12 lg:gap-16">
           {/* Quick Links */}
@@ -83,17 +83,17 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div className="flex flex-col gap-4 items-end">
-          <h1 className="text-lg text-light-black font-medium text-center md:text-right">
+        <div className="flex flex-col gap-4 items-start -mr-20">
+          <h1 className="text-lg text-light-black font-medium text-center md:text-left">
             Stay in the know & connect with us
           </h1>
-          <p className="text-light-black text-sm text-center md:text-right w-full md:w-[85%]">
+          <p className="text-light-black text-sm text-center md:text-left w-full md:w-[85%]">
             Subscribe to our newsletter.
             We promise we don’t spam your emails!
           </p>
 
           {/* Email Input with Button */}
-          <div className="relative -mr-2">
+          <div className="relative -ml-2">
             <div className="relative w-full md:w-92 transition-all duration-300">
               <input
                 type="email"

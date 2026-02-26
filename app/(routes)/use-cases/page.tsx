@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <MaxWrapper className="flex flex-col bg-light-white">
       <UseCasePageHero />
-     {useCasePageData.map((item, index) => (
+  <section className="max-w-screen-2xl mx-auto">
+       {useCasePageData.map((item, index) => (
         <GlobalSection
           key={index}
           image={item.image}
@@ -18,6 +19,7 @@ export default function Home() {
           flexReverse={item.flexReverse}
         />
       ))}
+  </section>
       <CtaSection/>
     </MaxWrapper>
   );

@@ -6,8 +6,8 @@ import BlurFadeImg from "@/components/shared/blur-fade-img";
 
 const AboutHero = () => {
   return (
-    <div className="w-full min-h-svh md:min-h-lvh flex flex-col mt-6 lg:flex-row items-center justify-between responsive-padding py-12">
-      <div className="w-full lg:w-1/2 flex flex-col space-y-6 mb-8 lg:mb-0">
+    <div className="w-full min-h-svh md:min-h-lvh flex flex-col mt-6 lg:flex-row items-center justify-between responsive-padding max-w-screen-2xl mx-auto py-12">
+      <div className="w-full flex-1 flex flex-col space-y-6 mb-8 lg:mb-0 md:pr-20">
         <BlurFade delay={0.2} inView>
           <h1 className="text-3xl md:text-5xl font-medium font-dm-sans text-light-black">
             Our Company
@@ -34,14 +34,14 @@ const AboutHero = () => {
         </BlurFade>
       </div>
 
-      <div className="w-full lg:w-1/2 flex items-center justify-end h-full">
+      <div className="flex items-center justify-end h-full">
         <BlurFadeImg delay={0.3} inView>
           <Image
             src="/bg/company-page-hero.webp" // Replace with your actual image path
             alt="Sap Symphony hero image"
             className="object-cover h-auto"
-            width={400}
-            height={300}
+            width={450}
+            height={350}
           />
         </BlurFadeImg>
       </div>

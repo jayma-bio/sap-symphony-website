@@ -108,7 +108,7 @@ const ContactForm = () => {
   return (
     <div
       id="contact"
-      className="w-full responsive-padding mt-20"
+      className="w-full responsive-padding max-w-screen-2xl mx-auto mt-20"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 bg-light-green px-10 py-8 rounded-lg">
         {/* Left Side - Contact Info */}

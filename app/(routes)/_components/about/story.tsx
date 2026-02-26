@@ -22,7 +22,7 @@ const parseContent = (content: string) => {
 
 const StorySection = () => {
   return (
-    <div className="w-full h-auto responsive-padding flex items-center flex-col mx-auto gap-8 pb-10">
+    <div className="w-full h-auto responsive-padding max-w-screen-2xl mx-auto flex items-center flex-col mx-auto gap-8 pb-10">
       <SectionHeader
         tag="STORY"
         title="Our Journey"
