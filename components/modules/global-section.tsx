@@ -1,4 +1,4 @@
- 
+
 "use client";
 
 import Image from "next/image";
@@ -10,9 +10,26 @@ interface GlobalSectionProps {
   flexReverse?: boolean;
   image: string;
   title: string;
-  description: string[]; // now an array
-  titleGradient?: string; // optional custom gradient classes
+  description: string[];
+  titleGradient?: string;
 }
+
+// Extract content between single quotes, rest gets gradient
+const parseTitleWithQuotes = (title: string) => {
+  // Split title by quoted sections, remove quotes from output
+  const parts = title.split(/('[^']*')/).map(part => part.trim()).filter(Boolean);
+  const result: { text: string; isQuoted: boolean }[] = [];
+  
+  parts.forEach(part => {
+    if (part.startsWith("'") && part.endsWith("'")) {
+      result.push({ text: part.slice(1, -1), isQuoted: true }); // Remove quotes
+    } else {
+      result.push({ text: part, isQuoted: false });
+    }
+  });
+  
+  return result;
+};
 
 export const GlobalSection = ({
   flexReverse = false,
@@ -21,6 +38,8 @@ export const GlobalSection = ({
   description,
   titleGradient = "bg-gradient-to-b from-[#536942] via-[#8A9D70] to-[#536942]",
 }: GlobalSectionProps) => {
+  const titleParts = parseTitleWithQuotes(title);
+
   return (
     <div className="w-full h-full responsive-padding my-8">
       <div
@@ -49,17 +68,27 @@ export const GlobalSection = ({
             flexReverse ? "md:pr-14" : "md:ml-14"
           )}
         >
-          <div className="flex flex-col space-y-3 w-full items-start pl-4">
+          <div className="flex flex-col space-y-4 w-full items-start pl-4">
 
             {/* TITLE */}
             <BlurFade delay={0.2} inView>
               <h1
                 className={cn(
-                  "text-2xl md:text-3xl font-semibold font-dm-sans text-left bg-clip-text text-transparent",
-                  titleGradient
+                  "text-2xl md:text-4xl font-semibold font-dm-sans text-left max-w-lg inline"
                 )}
               >
-                {title}
+                {titleParts.map((part, i) => (
+                  <span
+                    key={i}
+                    className={cn(
+                      part.isQuoted
+                        ? "text-inherit mr-2"  // Shows 🌿 naturally, no quotes visible
+                        : cn("bg-clip-text text-transparent", titleGradient)
+                    )}
+                  >
+                    {part.text}
+                  </span>
+                ))}
               </h1>
             </BlurFade>
 

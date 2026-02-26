@@ -41,7 +41,7 @@ const SectionHeader = ({
         </h1>
       </BlurFade>
       <BlurFade delay={0.3} inView>
-        <p className={cn("text-light-black text-center md:text-start md:w-[70%]", descriptionClassName)}>
+        <p className={cn("text-light-black text-lg text-center md:text-start md:w-[70%]", descriptionClassName)}>
           {description}
         </p>
         </BlurFade>

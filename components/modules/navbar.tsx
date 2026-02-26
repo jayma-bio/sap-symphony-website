@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 
 const PRODUCT_LINK = process.env.NEXT_PUBLIC_PRODUCT_LINK!;
 
-const SPECIAL_PATHS = ["/contact"];
+const SPECIAL_PATHS = ["/contact","/about"];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
