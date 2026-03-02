@@ -9,18 +9,18 @@ export default function Home() {
   return (
     <MaxWrapper className="flex flex-col bg-light-white">
       <UseCasePageHero />
-  <section className="max-w-screen-2xl mx-auto">
-       {useCasePageData.map((item, index) => (
-        <GlobalSection
-          key={index}
-          image={item.image}
-          title={item.title}
-          description={item.description}
-          flexReverse={item.flexReverse}
-        />
-      ))}
-  </section>
-      <CtaSection/>
+      <section className="w-full max-w-screen-2xl mx-auto">
+        {useCasePageData.map((item, index) => (
+          <GlobalSection
+            key={index}
+            image={item.image}
+            title={item.title}
+            description={item.description}
+            flexReverse={item.flexReverse}
+          />
+        ))}
+      </section>
+      <CtaSection />
     </MaxWrapper>
   );
 }

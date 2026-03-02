@@ -64,7 +64,7 @@ const TextCloud = () => {
               className="flex shrink-0 items-center gap-6 select-none pointer-events-none text-deepest-green whitespace-nowrap px-6"
             >
               <CustomIcon src="/icons/star.svg" size={10} />
-              <span className="text-lg font-medium">{item.name}</span>
+              <span className="text-lg font-medium font-manrope">{item.name}</span>
             </div>
           ))}
         </div>

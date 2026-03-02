@@ -4,5 +4,11 @@ export const videosData = [
         title: "Dummy",
         video: "/video/src/1.mp4",
         thumbnail: "/video/thumbnail/1.png",
-    }
+    },
+     {
+        index: 2,
+        title: "Dummy",
+        video: "/video/src/1.mp4",
+        thumbnail: "/video/thumbnail/1.png",
+    },
 ]

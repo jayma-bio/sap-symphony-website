@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const navItems = [
+export const navItems = [
   { name: "Science", link: "/" },
   { name: "Use Cases", link: "/use-cases" },
   { name: "About", link: "/about" },
@@ -14,14 +14,14 @@ const navItems = [
 
 const NavItems = ({
   special_paths,
-  chageOnScroll,
+  changeOnScroll,
 }: {
   special_paths?: string[];
-  chageOnScroll?: boolean;
+  changeOnScroll?: boolean;
 }) => {
   const pathname = usePathname();
   const isSpecialPath = special_paths?.includes(pathname) || false;
-  const isGreen = chageOnScroll && isSpecialPath;
+  const isGreen = changeOnScroll && isSpecialPath;
 
   return (
     <div className="flex flex-col md:flex-row items-center lg:gap-16 md:gap-6 gap-5">

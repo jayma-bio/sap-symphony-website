@@ -27,7 +27,7 @@ const SectionHeader = ({
     <div className="flex flex-col gap-6 w-full">
         {!hideTag && (
            <BlurFade inView delay={0.2}>
-         <div className="flex gap-3 items-center justify-center md:justify-start">
+         <div className="flex gap-3 items-center justify-start">
         <div className={cn("w-14 h-0.5 bg-light-black", lineClassName)} />
         <h1 className={cn("font-manrope text-sm tracking-widest text-light-black uppercase", tagClassName)}>
           {tag}
@@ -36,12 +36,12 @@ const SectionHeader = ({
       </BlurFade>
         )}
       <BlurFade delay={0.25} inView>
-        <h1 className={cn("heading text-[48px]! text-deepest-green", titleClassName)}>
+        <h1 className={cn("heading text-4xl md:text-[48px]! text-deepest-green", titleClassName)}>
           {title}
         </h1>
       </BlurFade>
       <BlurFade delay={0.3} inView>
-        <p className={cn("text-light-black text-lg text-center md:text-start md:w-[70%]", descriptionClassName)}>
+        <p className={cn("text-light-black text-lg text-left md:text-start md:w-[70%]", descriptionClassName)}>
           {description}
         </p>
         </BlurFade>

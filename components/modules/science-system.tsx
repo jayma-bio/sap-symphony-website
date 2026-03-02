@@ -19,33 +19,33 @@ interface AccordionItem {
 
 const accordionData: AccordionItem[] = [
   {
-    title: "Plant Signal Detection",
+    title: "Light Exposure",
     content:
-      "SapSymphony detects slight electrical variations in a plant via two electrodes placed on the leaves.",
+      "Sap Symphony detects subtle electrical changes in plants caused by variations in light. Using two gentle electrodes placed on the leaves, it captures how plants respond to changing light conditions in real time.",
     image: "/science/1.webp",
   },
   {
-    title: "Signals to Sound",
+    title: "Water Intake",
     content:
-      "These variations are graphed as a wave, which is translated into pitch messages that determine notes played on musical instruments designed by our team.",
+      "As plants absorb water, their internal electrical activity shifts. Sap Symphony translates these variations into dynamic wave patterns, which are converted into musical notes through our proprietary sound mapping system.",
     image: "/science/2.webp",
   },
   {
-    title: "Dynamic Plant Music",
+    title: "Touch and Movement",
     content:
-      "Other characteristics of the wave related to a plant's activity level change how those instruments are played, including tempo and effects.",
+      "Physical interaction such as touch, wind, or natural movement alters plant electrical signals. These changes influence musical elements like tempo, rhythm, and modulation, reflecting the plant’s activity.",
     image: "/science/3.webp",
   },
   {
-    title: "Nature's Melody",
+    title: "Temperature Changes",
     content:
-      "The result is a continuous stream of pleasing music that gives you a sonic window into the secret life of plants.",
+      "Environmental temperature affects plant physiology. Sap Symphony captures these responses and expresses them through evolving soundscapes, revealing how plants adapt to their surroundings.",
     image: "/science/4.webp",
   },
   {
-    title: "Real-Time Visualization",
+    title: "Human Interaction",
     content:
-      "Watch as your plant's biorhythms come to life through our interactive display, showing the direct correlation between plant activity and musical output.",
+      "When humans engage with plants, measurable bioelectrical responses occur. Sap Symphony transforms this interaction into music creating a unique sonic connection between people and plants.",
     image: "/science/5.webp",
   },
 ];
@@ -92,7 +92,7 @@ const ScienceSystemComponent = ({ className }: PlantSignalComponentProps) => {
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6 text-sm text-gray font-manrope">
+                <AccordionContent className="px-6 pb-4 md:pb-6 text-sm text-gray font-manrope">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>
