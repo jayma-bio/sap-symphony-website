@@ -77,9 +77,7 @@ const Navbar = () => {
                 <AlignJustify
                   className={cn(
                     "size-6 text-white!",
-                    // (isSpecialPath && !isScrolled)
-                    //   ? "text-white!"
-                    //   : "text-black"
+                    isSpecialPath && "text-light-black!"
                   )}
                 />
               
