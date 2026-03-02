@@ -11,9 +11,9 @@ const HowItWorks = () => {
     : [];
 
   return (
-    <section className="w-full flex flex-col gap-10 responsive-padding min-h-[60vh] max-w-screen-2xl mx-auto py-14">
+    <section className="w-full flex flex-col gap-6 md:gap-10 responsive-padding min-h-[60vh] max-w-screen-2xl mx-auto py-8 md:py-14">
       <SectionHeader tag="How it works" title="How to use Sap Symphony?" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
         {sortedVideos.map((item, index) => (
           <BlurFade key={item.index} delay={0.15 * index} inView>
             <VideoPlayer item={item} />

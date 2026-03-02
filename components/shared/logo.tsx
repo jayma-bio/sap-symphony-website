@@ -8,19 +8,20 @@ import { usePathname } from "next/navigation";
 
 interface LogoProps {
   className?: string;
-  chageOnScroll?: boolean;
+  logoPath?: string;
+  changeOnScroll?: boolean;
   special_paths?: string[]
 }
 
 
-const Logo = ({ className, special_paths, chageOnScroll }: LogoProps) => {
+const Logo = ({ className, special_paths, changeOnScroll, logoPath }: LogoProps) => {
   const pathname = usePathname();
   const isSpecialPath = special_paths?.includes(pathname) || false;
   
   return (
     <Link href={"/"} className={cn("cursor-pointer select-none", className)}>
       <Image
-        src={chageOnScroll && isSpecialPath ? "/logo-black.svg" : "/logo.svg"}
+        src={logoPath || (changeOnScroll && isSpecialPath ? "/logo-black.svg" : "/logo.svg")}
         alt="logo"
         width={60}
         height={60}

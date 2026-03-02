@@ -110,7 +110,7 @@ const ContactForm = () => {
       id="contact"
       className="w-full responsive-padding max-w-screen-2xl mx-auto mt-20"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 bg-light-green px-10 py-8 rounded-lg">
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 bg-light-green px-4 md:px-10 py-8 rounded-lg">
         {/* Left Side - Contact Info */}
         <div className="flex flex-col gap-6">
           <SectionHeader
@@ -121,15 +121,15 @@ const ContactForm = () => {
           />
 
           {/* Address */}
-          <div className="flex flex-col gap-4 mt-4">
-            <h3 className="text-lg font-semibold text-light-black">Address</h3>
+          <div className="flex flex-col gap-3 md:gap-4 mt-2 md:mt-4">
+            <h3 className="text-lg font-semibold text-light-black font-dm-sans">Address</h3>
             <div className="flex gap-3 items-start">
               <MapPin className="size-5 shrink-0 text-light-black mt-0.5" />
               <a
                 href="https://www.google.com/maps/place/Biotechnology+and+Medical+Engineering+Department,+NIT+Rourkela/@22.2526738,84.8972507,16z/data=!4m10!1m2!2m1!1sBM-224,+BM+BT+Department+Building,+NIT+Rourkela,+Sector+1,+Rourkela,+Odisha+769008,+IN!3m6!1s0x3a201e78b80b8fed:0xa0d5e04c601605ad!8m2!3d22.2526738!4d84.9044054!15sClZCTS0yMjQsIEJNIEJUIERlcGFydG1lbnQgQnVpbGRpbmcsIE5JVCBSb3Vya2VsYSwgU2VjdG9yIDEsIFJvdXJrZWxhLCBPZGlzaGEgNzY5MDA4LCBJTlpSIlBibSAyMjQgYm0gYnQgZGVwYXJ0bWVudCBidWlsZGluZyBuaXQgcm91cmtlbGEgc2VjdG9yIDEgcm91cmtlbGEgb2Rpc2hhIDc2OTAwOCBpbpIBFXVuaXZlcnNpdHlfZGVwYXJ0bWVudJoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQyeFNjV0pIV1hkVVYzUkRXVzFzYWxscmRHcE9SbHBzV1RJNGVXSnNSUkFC4AEA-gEECAAQJQ!16s%2Fg%2F11g8_pqh4k?authuser=0&entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-light-black transition-colors"
+                className="text-light-black transition-colors font-manrope"
               >
                 BM-224, BM BT Department Building, NIT Rourkela,
                 <br /> Sector 1, Rourkela, Odisha 769008, IN
@@ -139,14 +139,14 @@ const ContactForm = () => {
 
           {/* Contact */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-lg font-semibold text-light-black">Contact</h3>
+            <h3 className="text-lg font-semibold text-light-black font-dm-sans">Contact</h3>
 
             <div className="flex gap-3 items-center">
               <Phone className="size-5 shrink-0 text-light-black" />
               <div className="flex flex-col gap-1">
                 <a
                   href="tel:+919940515782"
-                  className="text-light-black transition-colors"
+                  className="text-light-black transition-colors font-manrope"
                 >
                   +91 99405 15782
                 </a>
@@ -158,7 +158,7 @@ const ContactForm = () => {
               <div className="flex flex-col gap-1">
                 <a
                   href="mailto:jaymabiotech@gmail.com"
-                  className="text-light-black hover:text-deepest-green transition-colors"
+                  className="text-light-black hover:text-deepest-green transition-colors font-manrope"
                 >
                   jaymabiotech@gmail.com
                 </a>
@@ -168,16 +168,16 @@ const ContactForm = () => {
         </div>
 
         {/* Right Side - Form */}
-        <Card className="p-6 md:p-8 border-0 shadow-lg shadow-muted">
+        <Card className="p-4 md:p-8 border-0 shadow-lg shadow-muted rounded-md">
           <form onSubmit={onSubmit} className="flex flex-col gap-4">
             {/* Name */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-light-black">Name*</label>
+              <label className="text-sm font-medium text-light-black font-dm-sans">Name*</label>
               <Input
                 placeholder="Enter your name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                className="h-11"
+                className="h-11 font-manrope text-sm md:text-md"
                 name="name"
               />
               {errors.name && (
@@ -187,13 +187,13 @@ const ContactForm = () => {
 
             {/* Email */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-light-black">Email*</label>
+              <label className="text-sm font-medium text-light-black font-dm-sans">Email*</label>
               <Input
                 type="email"
                 placeholder="Email"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="h-11"
+                className="h-11 font-manrope text-sm md:text-md"
                 name="email"
               />
               {errors.email && (
@@ -203,7 +203,7 @@ const ContactForm = () => {
 
             {/* Business Email */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-light-black">
+              <label className="text-sm font-medium text-light-black font-dm-sans">
                 Business Email*
               </label>
               <Input
@@ -213,7 +213,7 @@ const ContactForm = () => {
                 onChange={(e) =>
                   handleInputChange("businessEmail", e.target.value)
                 }
-                className="h-11"
+                className="h-11 font-manrope text-sm md:text-md"
                 name="businessEmail"
               />
               {errors.businessEmail && (
@@ -225,13 +225,13 @@ const ContactForm = () => {
 
             {/* Phone */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-light-black">Phone</label>
+              <label className="text-sm font-medium text-light-black font-dm-sans">Phone</label>
               <Input
                 type="tel"
                 placeholder="Enter your phone number"
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
-                className="h-11"
+                className="h-11 font-manrope text-sm md:text-md"
                 name="phone"
               />
               {errors.phone && (
@@ -241,7 +241,7 @@ const ContactForm = () => {
 
             {/* Organization */}
             <div className="space-y-2">
-              <label className="text-sm font-medium text-light-black">
+              <label className="text-sm font-medium text-light-black font-dm-sans">
                 Organization
               </label>
               <Input
@@ -250,7 +250,7 @@ const ContactForm = () => {
                 onChange={(e) =>
                   handleInputChange("organization", e.target.value)
                 }
-                className="h-11"
+                className="h-11 font-manrope text-sm md:text-md "
                 name="organization"
               />
               {errors.organization && (
@@ -270,7 +270,7 @@ const ContactForm = () => {
                   }
                   className="border-[#E4E4E7]! mt-0.5"
                 />
-                <label className="text-sm text-light-black font-normal cursor-pointer">
+                <label className="text-sm text-light-black font-normal cursor-pointer font-manrope">
                   I have read and agree to the{" "}
                   <a
                     href="https://www.jaymabioinnovations.com/terms-conditions"

@@ -22,14 +22,14 @@ const parseContent = (content: string) => {
 
 const StorySection = () => {
   return (
-    <div className="w-full h-auto responsive-padding max-w-screen-2xl mx-auto flex items-center flex-col mx-auto gap-8 pb-10">
+    <div className="w-full h-auto responsive-padding max-w-screen-2xl mx-auto flex items-center flex-col mx-auto gap-6 md:gap-8 md:pb-10">
       <SectionHeader
         tag="STORY"
         title="Our Journey"
         description="It started with a question that refused to go away - If plants could communicate… what would they sound like?"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full my-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 w-full my-4">
         {journeyData.map((item, index) => (
           <BlurFade key={index} delay={0.15 * index} inView>
             <div className="flex flex-col gap-4">

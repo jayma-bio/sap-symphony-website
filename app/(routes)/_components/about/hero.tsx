@@ -6,16 +6,16 @@ import BlurFadeImg from "@/components/shared/blur-fade-img";
 
 const AboutHero = () => {
   return (
-    <div className="w-full min-h-svh md:min-h-lvh flex flex-col mt-6 lg:flex-row items-center justify-between responsive-padding max-w-screen-2xl mx-auto py-12">
-      <div className="w-full flex-1 flex flex-col space-y-6 mb-8 lg:mb-0 md:pr-20">
+    <div className="w-full min-h-svh md:min-h-lvh flex flex-col mt-16 md:mt-6 lg:flex-row items-center justify-between responsive-padding max-w-screen-2xl mx-auto py-12">
+      <div className="w-full flex-1 flex flex-col space-y-4 md:space-y-6 mb-6 md:mb-8 lg:mb-0 md:pr-20">
         <BlurFade delay={0.2} inView>
-          <h1 className="text-3xl md:text-5xl font-medium font-dm-sans text-light-black">
+          <h1 className="text-4xl md:text-5xl font-medium font-dm-sans text-light-black">
             Our Company
           </h1>
         </BlurFade>
 
         <BlurFade delay={0.25} inView>
-          <p className="font-normal md:text-lg leading-8 font-manrope">
+          <p className="font-normal text-md md:text-lg leading-8 font-manrope">
             It began with a simple feeling. <br />
             The feeling that plants were never really silent. <br />
             That maybe… we just didn’t know how to listen. <br />

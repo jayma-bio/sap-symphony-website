@@ -10,6 +10,7 @@ import BlurFade from "@/components/shared/blur-fade";
 const firstColumn = testimonials.slice(0, 4);
 const secondColumn = testimonials.slice(5, 9);
 const thirdColumn = testimonials.slice(10, 15);
+const allTestimonials = [...firstColumn, ...secondColumn, ...thirdColumn];
 
 const TestimonialsColumn = (props: {
   className?: string;
@@ -52,7 +53,6 @@ const TestimonialsColumn = (props: {
                     <div className="text-light-white/80 tracking-tight leading-5 nunito select-none pointer-events-none font-dm-sans">
                       {name}
                     </div>
-                    {/* Star Rating */}
                     <div className="flex gap-1">
                       {[...Array(rating)].map((_, i) => (
                         <Star
@@ -76,36 +76,41 @@ export const Testimonials = () => {
   return (
     <section className="w-full bg-light-black">
       <div
-      id="testimonials"
-      className="w-full  h-auto max-w-screen-2xl mx-auto responsive-padding flex items-center flex-col gap-8 py-10"
-    >
-      <SectionHeader
-        tag="Success Stories"
-        lineClassName="bg-light-white"
-        tagClassName="text-light-white!"
-        title="Trusted by Industry Leaders"
-        titleClassName="text-light-white!"
-      />
-      <div className="flex justify-center my-5 gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_35%,black_65%,transparent)] max-h-[600px] overflow-hidden">
-        <BlurFade delay={0.1} inView>
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-        </BlurFade>
-        <BlurFade delay={0.15} inView>
-          <TestimonialsColumn
-            testimonials={secondColumn}
-            className="hidden md:block"
-            duration={19}
-          />
-        </BlurFade>
-        <BlurFade delay={0.2} inView>
-          <TestimonialsColumn
-            testimonials={thirdColumn}
-            className="hidden lg:block"
-            duration={17}
-          />
-        </BlurFade>
+        id="testimonials"
+        className="w-full h-auto max-w-screen-2xl mx-auto responsive-padding flex items-center flex-col gap-6 md:gap-8 py-12 md:py-10"
+      >
+        <SectionHeader
+          tag="Success Stories"
+          lineClassName="bg-light-white"
+          tagClassName="text-light-white!"
+          title="Trusted by Industry Leaders"
+          titleClassName="text-light-white!"
+        />
+        <div className="w-full flex flex-col lg:flex-row justify-center my-2 md:my-5 gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_35%,black_65%,transparent)] max-h-[600px] overflow-hidden">
+          {/* Mobile: Single column with all testimonials */}
+          <div className="lg:hidden w-full max-w-md mx-auto">
+            <BlurFade delay={0.1} inView>
+              <TestimonialsColumn
+                testimonials={allTestimonials}
+                duration={60}
+              />
+            </BlurFade>
+          </div>
+
+          {/* Desktop: Multiple columns */}
+          <div className="hidden lg:flex gap-6 w-full max-w-6xl mx-auto">
+            <BlurFade delay={0.1} inView>
+              <TestimonialsColumn testimonials={firstColumn} duration={15} />
+            </BlurFade>
+            <BlurFade delay={0.15} inView>
+              <TestimonialsColumn testimonials={secondColumn} duration={19} />
+            </BlurFade>
+            <BlurFade delay={0.2} inView>
+              <TestimonialsColumn testimonials={thirdColumn} duration={17} />
+            </BlurFade>
+          </div>
+        </div>
       </div>
-    </div>
     </section>
   );
 };

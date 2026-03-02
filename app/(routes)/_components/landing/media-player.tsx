@@ -12,12 +12,12 @@ const MediaPlayer = () => {
     })) || [];
 
   return (
-    <div className="w-full min-h-svh md:min-h-screen media-player-bg relative flex flex-col items-center justify-center gap-10 responsive-padding overflow-hidden">
+    <div className="w-full min-h-[85vh] md:min-h-screen media-player-bg relative flex flex-col items-center justify-center gap-10 responsive-padding overflow-hidden">
       {/* ── Hero copy ────────────────────────────────────────────────────── */}
       <div className="flex flex-col items-center gap-5 z-10">
         <BlurFade delay={0.2} inView>
           <h1 className="heading text-4xl md:text-5xl text-center leading-tight">
-            Connecting people with <br /> the nature
+            Connecting people with <br className="hidden md:block" /> the nature
           </h1>
         </BlurFade>
 
