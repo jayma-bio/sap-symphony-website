@@ -10,14 +10,14 @@ import BlurFade from "@/components/shared/blur-fade";
 
 const TeamSection = () => {
   return (
-    <div className="w-full h-auto max-w-screen-2xl mx-auto responsive-padding flex items-center flex-col mx-auto gap-8 py-12">
+    <div className="w-full h-auto max-w-screen-2xl mx-auto responsive-padding flex items-center flex-col mx-auto gap-6 md:gap-8 py-8 md:py-12">
       <SectionHeader
         tag="TEAM"
         title="The Minds Behind the Innovation"
         description="Behind Sap Symphony is a team that never wanted to separate science from wonder."
       />
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
         {teamMembers.map((member, index) => (
           <BlurFade key={member.id} delay={0.1 * index} inView>
             <Card className="p-3 shadow-none!">
