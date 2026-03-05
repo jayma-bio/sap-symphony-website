@@ -55,7 +55,7 @@ export const GlobalSection = ({
               alt="section-image"
               width={500}
               height={500}
-              className="pointer-events-none select-none object-contain w-full max-w-[340px] sm:max-w-[380px] md:max-w-[440px] lg:max-w-[500px] h-auto"
+              className="pointer-events-none select-none object-contain w-full max-w-[340px] sm:max-w-[380px] md:max-w-[440px] lg:max-w-[500px] h-auto rounded-xl"
             />
           </BlurFadeImg>
         </div>
