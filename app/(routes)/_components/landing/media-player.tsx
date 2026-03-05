@@ -33,13 +33,13 @@ const MediaPlayer = () => {
       <BlurFade
         delay={0.38}
         inView
-        className="w-full flex justify-center px-4"
+        className="w-full flex justify-center px-4 z-20"
       >
         <Player tracks={tracks} />
       </BlurFade>
 
       {/* ── Overlay tint ─────────────────────────────────────────────────── */}
-      <div className="absolute inset-0 bg-light-black/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-light-black/50 pointer-events-none" />
 
       {/* ── Bottom fade ──────────────────────────────────────────────────── */}
       <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-transparent to-light-white pointer-events-none" />
